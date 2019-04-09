@@ -19,7 +19,8 @@ class DeepNN:
             self.weights.append(np.random.randn(self.units[i],self.units[i-1])*0.1)
             self.bias.append(np.zeros(shape = (1,self.units[i]),dtype = float))
 
-
+    #Two activation functions are there, more will be added and another module of activations will be there
+    
     def sigmoid(self,x):
         #return 1/(1+np.exp(-x))
         #return np.where(x >= 0,1 / (1 + np.exp(-x)),np.exp(x) / (1 + np.exp(x)))
@@ -63,16 +64,13 @@ class DeepNN:
 
         return x,caches,caches_x     
 
-
+    #Binary Cross Entropy loss
     def cost(self,y_true,y_pred):
         total_loss = np.multiply(y_true,np.log(y_pred)) + np.multiply(1-y_true,np.log(1-y_pred))
         cost = (-1/y_true.shape[0]) * np.sum(total_loss)
         return cost
 
-
-        
-        
-
+    #Training the Neural network
     def train_NN(self,x_train,y_train,iters,learning_rate,x_val,y_val):
 
         costs = []
@@ -110,13 +108,6 @@ class DeepNN:
                 self.bias[j] = self.bias[j] - ((learning_rate)*dB)
                 
                 
-                
-                
-
-                
-        
-
-
         out_dict = {'Trained weights':self.weights,'Trained biases':self.bias,'Training cost':costs} 
 
         return out_dict 
