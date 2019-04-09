@@ -1,7 +1,5 @@
 #Deep neural network class
 import numpy as np
-from scipy.special import expit
-
 
 class DeepNN:
     L = 0
@@ -22,9 +20,8 @@ class DeepNN:
     #Two activation functions are there, more will be added and another module of activations will be there
     
     def sigmoid(self,x):
-        #return 1/(1+np.exp(-x))
-        #return np.where(x >= 0,1 / (1 + np.exp(-x)),np.exp(x) / (1 + np.exp(x)))
-        return expit(x)
+        return np.where(x >= 0,1 / (1 + np.exp(-x)),np.exp(x) / (1 + np.exp(x)))
+        
 
     def relu(self,x):
         return np.maximum(x,0)
