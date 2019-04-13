@@ -1,3 +1,5 @@
 This is a binary classification problem. The tast is to identity whether it is a cat image or not. The problem is inspired from the MOOC on
 Deep learning specialization on Coursera. I have implemented my own deep neural network library, it starts with basic optimization algorithms
 and activation functions. Later more optimization algorithms and acivation functions will be added.
+
+Second notebook contains how to prevent overfitting by using L2 regularization.
