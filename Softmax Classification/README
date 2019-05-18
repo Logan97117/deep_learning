@@ -1,1 +1,2 @@
 Softmax classification using feedforward neural networks implemented from scratch and using Tensorflow.
+The problem is taken from Kaggle competition on Digit recognizer. The code achieved a public score of 0.96151 on kaggle.
